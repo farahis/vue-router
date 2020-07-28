@@ -1,0 +1,15 @@
+
+### Navigation Guards
+Vue router memiliki hak akses, seperti halaman yang hanya boleh diakses ketika user telah login.
+`Ada 3 Cara` mendefinisikan **Navigation Guard** yaitu secara `global, per-route, atau dalam component`.
+
+`Setiap fungsi guard mempunyai tiga argumen:`
+- to: Route: target route (path) di mana halaman akan diredirect.
+- from: Route: current route asal.
+- next: Function: fungsi ini hasrus dipanggil untuk menyelesaikan hook. Aksinya tergantung pada argumen yang dilewatkan via next. 
+```
+next(): navigasi akan dilanjutkan.
+next(false): navigasi akan dibatalkan.
+next('/') or next({ path: '/' }): redirect ke route lain.
+next(error): (2.4.0+) navigasi akan dibatalkan dan error akan dikirimkan ke callbacks via router.onError().
+```
